@@ -44,7 +44,6 @@ function startApp() {
                     'Delete an department',
                     'Delete an role',
                     'Delete an employee',
-                    'Update an employees role',
                     'Exit'
                 ]
             }
@@ -79,9 +78,6 @@ function startApp() {
                 break;
             case 'Delete an employee':
                 yield deleteEmployee();
-                break;
-            case `Update an employee's role`:
-                yield updateEmployeeRole();
                 break;
             case 'Exit':
                 pool.end();
@@ -201,20 +197,6 @@ function deleteEmployee() {
         ]);
         yield pool.query('DELETE FROM employee WHERE id = $1', [id]);
         console.log(`Employee deleted.`);
-    });
-}
-function updateEmployeeRole() {
-    return __awaiter(this, void 0, void 0, function* () {
-        const employees = yield pool.query('SELECT * FROM employee');
-        const employeeChoices = employees.rows.map(emp => ({ name: `${emp.first_name} ${emp.last_name}`, value: emp.id }));
-        const roles = yield pool.query('SELECT * FROM role');
-        const roleChoices = roles.rows.map(role => ({ name: role.title, value: role.id }));
-        const answers = yield inquirer_1.default.prompt([
-            { type: 'list', name: 'employee_id', message: 'Select employee:', choices: employeeChoices },
-            { type: 'list', name: 'role_id', message: 'Select new role:', choices: roleChoices }
-        ]);
-        yield pool.query('UPDATE employee SET role_id = $1 WHERE id = $2', [answers.role_id, answers.employee_id]);
-        console.log('Employee role updated successfully');
     });
 }
 startApp();

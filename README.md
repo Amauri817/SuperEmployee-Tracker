@@ -1,4 +1,4 @@
-# Candidate Search
+# SuperEmployee-Tracker
 
 ## Description 
 Developers frequently have to create interfaces that allow non-developers to easily view and interact with information stored in databases. These interfaces are called **content management systems (CMS)**. Your assignment this week is to build a command-line application from scratch to manage a company's employee database, using Node.js, Inquirer, and PostgreSQL.
@@ -28,13 +28,10 @@ Amauri
 A lot.
 
 
-## Preview
-[Video Preview](https://drive.google.com/file/d/1K6lp8Bmukiu4jf1YDRgLVRgoB-A1VAI-/view?usp=sharing)
-
-[![A video thumbnail shows the command-line employee management application with a play button overlaying the view.](./Assets/12-sql-homework-video-thumbnail.png)](https://2u-20.wistia.com/medias/2lnle7xnpk)
+## Video Demo
+[Video Demo](https://drive.google.com/file/d/1xD089fGV92A_Pi77ppImBa78WoZs9kKJ/view?usp=sharing)
 
 ## Questions
-Not many
 For more personal questions, contact me at github.com/Amauri817
 or email me @ brownamauri@icloud.com, I will try to reply as soon as I can.
 
