@@ -31,6 +31,9 @@ A lot.
 ## Video Demo
 [Video Demo](https://drive.google.com/file/d/1xD089fGV92A_Pi77ppImBa78WoZs9kKJ/view?usp=sharing)
 
+## FORGOT TO SHOW UPDATING EMPLOYEES
+[VIDEO DEMO FOR UPDATING EMPLOYEES](https://drive.google.com/file/d/1qcysB-wAnFebyEcnQQtWe8AVnTX-_URX/view?usp=sharing)
+
 ## Questions
 For more personal questions, contact me at github.com/Amauri817
 or email me @ brownamauri@icloud.com, I will try to reply as soon as I can.

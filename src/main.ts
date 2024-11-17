@@ -34,6 +34,7 @@ pool.connect()
                     'Delete an department',
                     'Delete an role',
                     'Delete an employee',
+                    'Update an employees role',
                     'Exit'
                 ]
             }
@@ -69,6 +70,9 @@ pool.connect()
                 break;
             case 'Delete an employee':
                 await deleteEmployee();
+                break;
+            case `Update an employees role`:
+                await updateEmployeeRole();
                 break;
             case 'Exit':
                 pool.end();
@@ -187,4 +191,19 @@ pool.connect()
             console.log(`Employee deleted.`);
         }
     
+    async function updateEmployeeRole() {
+            const employees = await pool.query('SELECT * FROM employee');
+            const employeeChoices = employees.rows.map(emp => ({ name: `${emp.first_name} ${emp.last_name}`, value: emp.id }));
+        
+            const roles = await pool.query('SELECT * FROM role');
+            const roleChoices = roles.rows.map(role => ({ name: role.title, value: role.id }));
+        
+            const answers = await inquirer.prompt([
+                { type: 'list', name: 'employee_id', message: 'Select employee:', choices: employeeChoices },
+                { type: 'list', name: 'role_id', message: 'Select new role:', choices: roleChoices }
+            ]);
+        
+            await pool.query('UPDATE employee SET role_id = $1 WHERE id = $2 RETURNING *', [answers.role_id, answers.employee_id]);
+            console.log('Employee role updated successfully');
+        }
     startApp();
