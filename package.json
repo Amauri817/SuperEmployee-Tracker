@@ -1,0 +1,23 @@
+{
+  "name": "employee-tracker-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/main.js",
+  "scripts": {
+    "start": "node dist/main.js",
+    "build": "tsc"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "inquirer": "8.2.4",
+    "pg": "^8.0.0",
+    "dotenv": "^10.0.0"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^8.0.0",
+    "@types/pg": "^8.0.0",
+    "@types/node": "^16.0.0",
+    "typescript": "^4.0.0"
+  }
+}
